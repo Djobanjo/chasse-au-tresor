@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chasse au trésor - Campus Moufia</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+    #etat {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+      z-index: 1000;
+    }
+    #btn-moi {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      z-index: 1000;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    /* Conteneur énigme masqué par défaut */
+    #enigme-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 90vw;
+      max-width: 400px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transform: translate(-50%, -50%);
+      z-index: 1500;
+      font-family: Arial, sans-serif;
+    }
+    #enigme-container h2 {
+      margin-top: 0;
+    }
+    #enigme-container input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    #enigme-container button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    #feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div id="etat">📍 En attente de position...</div>
+<button id="btn-moi">📌 Moi</button>
+<div id="map"></div>
+
+<!-- Conteneur pour afficher l'énigme -->
+<div id="enigme-container">
+  <h2 id="titre-enigme"></h2>
+  <p id="texte-enigme"></p>
+  <input type="text" id="reponse-utilisateur" placeholder="Tape ta réponse ici" />
+  <div>
+    <button id="valider-reponse">Valider</button>
+    <button id="annuler-enigme">Annuler</button>
+  </div>
+  <p id="feedback"></p>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

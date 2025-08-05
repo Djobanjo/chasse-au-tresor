@@ -1,0 +1,28 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    background-color: #3e8e41;
+    color: white;
+    margin: 0;
+    padding: 1em;
+}
+
+#map {
+    height: 500px;
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid #3e8e41;
+    border-radius: 10px;
+}
+
+#etat {
+    margin-top: 1em;
+    font-weight: bold;
+}
